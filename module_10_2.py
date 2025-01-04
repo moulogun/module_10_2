@@ -16,13 +16,14 @@ class Knight(Thread):
         while enemies > 0:
             days += 1
             enemies -= self.power
+            enemies = max(enemies, 0)
             print(f"{self.name} сражается {days} день(дня)..., осталось {enemies} воинов.\n")
             sleep(1)
 
         print(f"{self.name} одержал победу спустя {days} день(дня)!\n")
 
 
-first_knight = Knight('Sir Lancelot', 10)
+first_knight = Knight('Sir Lancelot', 11)
 second_knight = Knight('Sir Galahad', 20)
 
 first_knight.start()
